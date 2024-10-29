@@ -4,6 +4,16 @@ export default {
     content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
   	extend: {
+		fontFamily: {
+			inter: "var(--inter)",
+			mono: "var(--space-mono)",
+		},
+		backgroundImage: {
+			"bg1": "url('./src/assets/bg1.jpeg')",
+			"bg2": "url('./src/assets/bg2.jpeg')",
+			"bg3": "url('./src/assets/bg3.jpeg')",
+			"bg4": "url('./src/assets/bg4.jpeg')",
+		},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
