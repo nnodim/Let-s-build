@@ -6,14 +6,40 @@ On centralized social media platforms, creators face a different, but equally fr
 
 With **Nebulax**, young African creators can finally bypass these unreliable and centralized systems. This NFT marketplace is a secure, transparent space where artists, musicians, and other creatives can upload, mint, and monetize their work directly, free from the risks of scams or gatekeeping algorithms. Nebulax provides a true home for creators, offering them sustainable earning opportunities within the Web3 ecosystem and a reliable way to fund their wallets and futures.
 
-# React + Vite
+## What it does?
+NebulaX creates a seamless onboarding for users making earning in web3 easy and fun
+we have two primarly users in mind, and the following is what it does for each of them?
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Creator (seller)
+they will be able to perform the following:
+- Connect to wallet
+- Create token
+- assigned token id
+- verify kyc
+- upload content
+- mint
+- product descriptiuons/pricing 
 
-Currently, two official plugins are available:
+### Buyer
+they will be able to carry out the folllowing 
+- Conncet wallet
+- Create tokenn
+- Get token Id
+- Verify kyc
+- Buy NFT
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# How it was made/Tools used?
 
+
+
+## Why Vottun Api
+
+## Challenges faced?
+
+
+## What we learned 
+
+
+## Futrure roadmap?
 
 
