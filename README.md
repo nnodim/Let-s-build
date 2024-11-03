@@ -1,6 +1,6 @@
 # NebulaX
 
-![nebulaX landing page]([https://imgur.com/BetkdZq](https://i.imgur.com/BetkdZq.png))
+![BetkdZq](https://github.com/user-attachments/assets/a735e646-8ba4-4af7-bd11-eb31423bca2f)
 
 If you give a man a fish, you feed him for a day. If you teach a man to fish, you feed him for a lifetime." This wisdom rings especially true in today’s Web3 space, where more wallets and tokens flood in daily, but for many young Africans, finding stable sources of income within the industry remains a challenge. Without reliable work, they rely on airdrops and effortless minting—only to discover that many platforms give little in return or turn out to be scams. 
 
