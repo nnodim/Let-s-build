@@ -1,5 +1,7 @@
 # NebulaX
 
+![alt text](https://imgur.com/a/U5AK8Pj)
+
 If you give a man a fish, you feed him for a day. If you teach a man to fish, you feed him for a lifetime." This wisdom rings especially true in today’s Web3 space, where more wallets and tokens flood in daily, but for many young Africans, finding stable sources of income within the industry remains a challenge. Without reliable work, they rely on airdrops and effortless minting—only to discover that many platforms give little in return or turn out to be scams. 
 
 On centralized social media platforms, creators face a different, but equally frustrating, struggle: strict rules and algorithms that prioritize established influencers. For emerging voices, monetizing content like art, music, and writing requires meeting complex standards, making income inaccessible to many. Nebulax is built to change that.
