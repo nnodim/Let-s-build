@@ -46,8 +46,10 @@ openzeppelin library
 
 - **API**: Vottun
 
-- **Blockchain network**: Arbitrum 
+- **Blockchain network**: Arbitrum
 
+  ## Smart contract
+  [Smart contract address](https://gist.github.com/nafkem/b1be2ff6db4d954f799759a1e80faf2c)
 
 ## Why Vottun Api
 The web3 space is still currently young and evolving around the globe and particularly in Africa as a continent.
