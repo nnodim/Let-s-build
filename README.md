@@ -28,8 +28,23 @@ they will be able to carry out the folllowing
 - Verify kyc
 - Buy NFT
 
-# How it was made/Tools used?
+## How it was made/Tools used?
+We brainstormed together as a team and here we a workable MVP 
+the following tools were used:
 
+- **User interface**: Figma
+
+- **Frontend** : Tailwind Css, React, amd JavaScript
+  
+- **Smart contract**:
+remix for testing 
+hardhart
+arbitrum sepolia
+openzeppelin library
+
+- **API**: Vottun
+
+- **Blockchain network**: Arbitrum 
 
 
 ## Why Vottun Api
