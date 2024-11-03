@@ -50,13 +50,36 @@ openzeppelin library
 
 
 ## Why Vottun Api
+The web3 space is still currently young and evolving around the globe and particularly in Africa as a continent.
+using Vottun Api creates a smoothless and borderless interaction for new users in the space and also helping devs build dapps faster and more easier.
 
 ## Challenges faced?
-
+Language barrier with most of the workshop videos. fellow builders weren't discussing in the group, 
+we couldn't access office hours with mentors who will guide us up with the project.
+Redoing the UI to fit the technicality of the project.
+Difficulty understanding the Vottun Api, and using as a backend as well as communicating with the frontend 
+was a major blocker for us as a team.
 
 ## What we learned 
+We learnt the phrase teamwork makes the dream work.
+through this project we understoood the pain point of many African's youths so with that pressure we were able to use the combination of our hard skills and soft skills together to bring NebulaX to reality.
+We also learned more about the vision of cryptoconexion and the impact of women in the web3 space.
+And lastly we learnt as a team that **DONE** is better than **PERFECT** 
 
 
 ## Futrure roadmap?
+We just released an MVP version 
+our future implementations will imclude the following? 
+
+- A responsive mobile web application
+- A mobile app version for the Ios and Android playstore respectively
+- Release the Beta version of this product next year
+- Onboard the next 5 million Content creators to digital creators by 2027
+  
+## Presentation slide 
+
+## Working Demo
 
 
+
+### Thank you 😃 
