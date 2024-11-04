@@ -8,80 +8,63 @@ On centralized social media platforms, creators face a different, but equally fr
 
 With **Nebulax**, young African creators can finally bypass these unreliable and centralized systems. This NFT marketplace is a secure, transparent space where artists, musicians, and other creatives can upload, mint, and monetize their work directly, free from the risks of scams or gatekeeping algorithms. Nebulax provides a true home for creators, offering them sustainable earning opportunities within the Web3 ecosystem and a reliable way to fund their wallets and futures.
 
-## What it does?
-NebulaX creates a seamless onboarding for users making earning in web3 easy and fun
-we have two primarly users in mind, and the following is what it does for each of them?
+## What it Does
+NebulaX creates a seamless onboarding experience for users, making it easy and fun to earn in Web3. We focus on two primary users:
 
-### Creator (seller)
-they will be able to perform the following:
-- Connect to wallet
+### Creators (Sellers):
+- Connect wallet
 - Create token
-- assigned token id
-- verify kyc
-- upload content
-- mint
-- product descriptiuons/pricing 
-
-### Buyer
-they will be able to carry out the folllowing 
-- Conncet wallet
-- Create tokenn
-- Get token Id
-- Verify kyc
-- Buy NFT
-
-## How it was made/Tools used?
-We brainstormed together as a team and here we a workable MVP 
-the following tools were used:
-
-- **User interface**: Figma
-
-- **Frontend** : Tailwind Css, React, amd JavaScript
+- Assign token ID
+- Verify KYC
+- Upload content
+- Mint content as NFT
+- Set product descriptions and pricing
   
-- **Smart contract**:
-remix for testing 
-hardhart
-arbitrum sepolia
-openzeppelin library
+### Buyers:
+- Connect wallet
+- Create token
+- Get token ID
+- Verify KYC
+- Purchase NFTs
+  
+## How It Was Made & Tools Used
+  
+Our team collaborated to develop a workable MVP using the following tools:
 
-- **API**: Vottun
+- User Interface: Figma
+- Frontend: Tailwind CSS, React, JavaScript
+- Smart Contract Development: Remix for testing, Hardhat, Arbitrum Sepolia, OpenZeppelin library
+- API: Vottun
+- Blockchain Network: Arbitrum
 
-- **Blockchain network**: Arbitrum
 
-  ## Smart contract
+ ## Smart contract
   [Smart contract address](https://gist.github.com/nafkem/b1be2ff6db4d954f799759a1e80faf2c)
 
-## Why Vottun Api
-The web3 space is still currently young and evolving around the globe and particularly in Africa as a continent.
-using Vottun Api creates a smoothless and borderless interaction for new users in the space and also helping devs build dapps faster and more easier.
+## Why We Chose Vottun API
+With Web3 still in its early stages, especially in Africa, Vottun API provides a frictionless and borderless experience for new users, helping developers build dApps faster and more efficiently. It enables seamless backend integration, enhancing the user journey and making Web3 accessible for everyone.
 
-## Challenges faced?
-Language barrier with most of the workshop videos. fellow builders weren't discussing in the group, 
-we couldn't access office hours with mentors who will guide us up with the project.
-Redoing the UI to fit the technicality of the project.
-Difficulty understanding the Vottun Api, and using as a backend as well as communicating with the frontend 
-was a major blocker for us as a team.
+## Challenges Faced
+- Language barriers with workshop videos
+- Limited group discussions with fellow builders
+- Lack of access to mentor office hours for project guidance
+- Adapting the UI to fit project requirements
+- Understanding and implementing Vottun API for backend and frontend communication presented major challenges
 
-## What we learned 
-We learnt the phrase teamwork makes the dream work.
-through this project we understoood the pain point of many African's youths so with that pressure we were able to use the combination of our hard skills and soft skills together to bring NebulaX to reality.
-We also learned more about the vision of cryptoconexion and the impact of women in the web3 space.
-And lastly we learnt as a team that **DONE** is better than **PERFECT** 
+## What We Learned
+Working on NebulaX taught us that **"teamwork makes the dream work."** This project deepened our understanding of the challenges facing African youth, motivating us to blend our technical and soft skills to bring NebulaX to life. We also learned more about the vision of CryptoConexion, the importance of women in Web3, and the value of progress over perfection: **DONE is better than PERFECT.**
 
-
-## Futrure roadmap?
-We just released an MVP version 
-our future implementations will imclude the following? 
-
-- A responsive mobile web application
-- A mobile app version for the Ios and Android playstore respectively
-- Release the Beta version of this product next year
-- Onboard the next 5 million Content creators to digital creators by 2027
+## Future Roadmap
+With our MVP now live, we’re looking ahead to these next steps:
+- Develop a responsive mobile web application
+- Launch a mobile app for iOS and Android
+- Release a beta version next year
+- Onboard 5 million African digital creators by 2027
   
 ## Presentation slide 
+[Presentation slide](https://www.canva.com/design/DAGUycKhuFE/lffz3PHu0ebOj1b_f7DGlw/edit?utm_content=DAGUycKhuFE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
 ## Working Demo
 
+## Thank you for exploring NebulaX! 😃
 
-
-### Thank you 😃 
