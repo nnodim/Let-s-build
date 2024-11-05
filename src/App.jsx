@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import { useConnect, useAccount, useReadContract } from 'wagmi';
 import { injected } from 'wagmi/connectors'
 import { Button } from "./components/ui/button";
-// import { nebulaXAbi, nebulaXCa } from "./constants/ABI/nebulaXcontracts";
 import { nebulaXAbi, nebulaXCa } from "./constants/ABI/nebulaXcontracts";
 
 
@@ -23,7 +22,7 @@ function App() {
   });
 
   
-  console.log("isVerified:", isValid);
+  // console.log("isVerified:", isValid);
 
   useEffect(() => {
     if (userWalletAddress) {
