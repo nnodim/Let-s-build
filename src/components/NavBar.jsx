@@ -84,7 +84,7 @@ export default function NavBar() {
           </div>
           {/* Logo */}
           <div className="flex flex-shrink-0 items-center">
-            <Link to="/">
+            <Link to="/dashboard">
               <img
                 className="block h-7 md:h-[52px] w-auto rounded-full"
                 src={logo1}

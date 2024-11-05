@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
+import { logo1 } from "@/assets";
 import { Button } from "@/components/ui/button";
 // import { Input } from "@/components/ui/input";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { BaseError, useAccount, useWriteContract, useReadContract, useDisconnect } from "wagmi";
 import { nebulaXAbi, nebulaXCa } from "@/constants/ABI/nebulaXcontracts";
 
@@ -53,8 +54,19 @@ export const Kyc = () => {
   }, [error]);
 
  return (
-   <main className="bg-bg4 h-screen bg-no-repeat bg-cover bg-blend-multiply relative flex justify-center items-center">
+   <main className="bg-[url('https://res.cloudinary.com/dr6bek9dv/image/upload/v1730744343/let%27s%20do%20it/kd7pdo2obhwxfpxlgcra.jpg')] h-screen bg-no-repeat bg-cover bg-blend-multiply relative">
      <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+     <div className="relative z-10">
+       <div className="flex flex-shrink-0 items-center p-4">
+         <Link to="/">
+           <img
+             className="block h-7 md:h-[52px] w-auto rounded-full"
+             src={logo1}
+             alt="Your Company"
+           />
+         </Link>
+       </div>
+       <div className="w-full flex items-center justify-center h-[calc(100vh-100px)]">
      <form className="relative z-10 flex flex-col items-center justify-between gap-10 w-full">
        <h1 className="bg-[#2C398EA1] w-full max-w-[324px] text-center py-4 rounded-full font-semibold text-white">
          Kyc Verification
@@ -81,7 +93,9 @@ export const Kyc = () => {
        >
          Disconnect wallet
        </Button>
-     </form>
+       </form>
+       </div>
+      </div>
    </main>
  );
 }

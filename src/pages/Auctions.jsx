@@ -107,7 +107,7 @@ export const Auctions = () => {
     address: nebulaXCa,
     abi: nebulaXAbi,
     functionName: "auctions",
-    args: [],
+    // args: [],
   });
   console.log("auctionList:", auctionList);
 
