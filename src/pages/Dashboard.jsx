@@ -34,7 +34,7 @@ export const Dashboard = () => {
     // args: [1],
   });
 
-  console.log("nftList:", nftList);
+  // console.log("nftList:", nftList);
 
   const { data: hash, isPending, error, writeContract } = useWriteContract();
 
