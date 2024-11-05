@@ -53,7 +53,7 @@ export const ConnectWalletModal = () => {
           <div className="flex flex-col gap-5">
             {wallets.map((wallet) => (
               <Button
-                onClick={() => navigate(`/verify-wallet`)}
+                onClick={() => navigate(`/approved`)}
                 key={wallet.name}
                 className="flex items-center justify-between gap-10 bg-[#F1F0F3] rounded-md text-black hover:bg-[#F1F0F3]/80 h-auto py-4 px-10"
               >

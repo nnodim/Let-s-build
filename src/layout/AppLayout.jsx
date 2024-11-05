@@ -1,14 +1,36 @@
+import React, { useEffect } from "react";
 import { Footer } from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 import { Outlet } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useAccount, useReadContract } from 'wagmi';
+import { nebulaXAbi, nebulaXCa } from "@/constants/ABI/nebulaXcontracts";
+// import { nebulaXAbi, nebulaXCa } from "./constants/ABI/nebulaXcontracts";
 
 export const AppLayout = () => {
+  const navigate = useNavigate();
+  const { isConnected, address: userWalletAddress } = useAccount();
+
+  const { data: isAuthorized } = useReadContract({
+    address: nebulaXCa,
+    abi: nebulaXAbi,
+    functionName: "authorizedAddresses",
+    args: [userWalletAddress],
+  });
+
+  
+  useEffect(() => {
+    if (!isConnected) {
+      navigate(`/`);
+    }
+  }, [isConnected, navigate]);
+
   return (
     <>
       <NavBar />
       <div className="bg-bg1 min-h-screen bg-no-repeat bg-cover bg-blend-multiply relative text-white font-inter">
         <div className="absolute min-h-screen inset-0 bg-black bg-opacity-60"></div>
-        <Outlet />
+        {isAuthorized && <Outlet />}
         <Footer />
       </div>
     </>

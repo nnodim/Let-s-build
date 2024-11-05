@@ -1,7 +1,47 @@
+import React, { useEffect } from "react";
 import { logo1 } from "./assets";
-import { ConnectWalletModal } from "./components/ConnectWalletModal";
+import { useNavigate } from "react-router-dom";
+// import { ConnectWalletModal } from "./components/ConnectWalletModal";
+import { useConnect, useAccount, useReadContract } from 'wagmi';
+import { injected } from 'wagmi/connectors'
+import { Button } from "./components/ui/button";
+// import { nebulaXAbi, nebulaXCa } from "./constants/ABI/nebulaXcontracts";
+import { nebulaXAbi, nebulaXCa } from "./constants/ABI/nebulaXcontracts";
+
 
 function App() {
+  const navigate = useNavigate();
+  // const { connectors, connect } = useConnect();
+  const { connect } = useConnect();
+  const { address: userWalletAddress, } = useAccount();
+
+  const { data: isValid } = useReadContract({
+    address: nebulaXCa,
+    abi: nebulaXAbi,
+    functionName: "verify",
+    args: [userWalletAddress, 1],
+  });
+
+  
+  console.log("isVerified:", isValid);
+
+  useEffect(() => {
+    if (userWalletAddress) {
+      if (isValid) {
+        return navigate(`/dashboard`);
+      } else {
+        return navigate(`/approved`);
+      }
+    }
+  }, [userWalletAddress, isValid, navigate]);
+
+  // useEffect(() => {
+  //   if (userWalletAddress) {
+  //     if (error) {
+  //       alert((BaseError).shortMessage || error.message);
+  //     }
+  //   }
+  // }, [error, userWalletAddress]);
   return (
     <>
       <main className="bg-bg1 h-screen bg-no-repeat bg-cover bg-blend-multiply relative flex justify-center items-center gap-40 text-white font-inter">
@@ -19,7 +59,16 @@ function App() {
           </div>
           <div className="w-full max-w-[850px] flex gap-10 justify-between">
             <h1 className="text-7xl/[86px] font-bold">NebulaX</h1>
-            <ConnectWalletModal />
+            {/* <ConnectWalletModal /> */}
+            <Button onClick={() => connect({ connector: injected() })} className="bg-[#161E53] h-auto rounded-[15px] text-5xl font-bold px-10 py-4">
+              Connect Wallet
+            </Button>
+
+            {/* {connectors.map((connector) => (
+              <Button key={connector.uid} onClick={() => connect({ connector })} className="bg-[#161E53] h-auto rounded-[15px] text-5xl font-bold px-10 py-4">
+              {connector.name}
+            </Button>
+            ))} */}
           </div>
         </div>
       </main>

@@ -1,10 +1,12 @@
+import React, { useState } from "react";
 import { logo1 } from "@/assets";
 import { cn } from "@/lib/utils";
-
+// import { Button } from "./ui/button";
 import { Link, NavLink } from "react-router-dom";
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "./ui/sheet";
 import { Menu } from "lucide-react";
+import { useAccount, useDisconnect } from "wagmi";
 
 const navigation = [
   { name: "About", href: "/about", current: true },
@@ -13,6 +15,9 @@ const navigation = [
   { name: "Dashboard", href: "/dashboard", current: false },
 ];
 export default function NavBar() {
+  const { disconnect } = useDisconnect();
+  const { address: userWalletAddress } = useAccount();
+  const [showDisconnect, setShowDisconnect] = useState(false);
   return (
     <header className="py-5 px-2 sm:px-6 lg:px-8 sticky top-0 z-50 bg-[#0A0D1B] w-full">
       <nav className="relative flex items-center justify-between mx-auto max-w-7xl">
@@ -59,6 +64,20 @@ export default function NavBar() {
                       </SheetTrigger>
                     </NavLink>
                   ))}
+                  <div className="flex flex-col relative">
+                    <div onClick={() => setShowDisconnect(!showDisconnect)}
+                      className="flex w-[220px] cursor-pointer items-center justify-center gap-4 rounded-[16px] bg-[#93b7be52] px-4 py-2 text-[16px] text-[#1E1E1E]">
+                      <span className="text-[16px] text-white">{userWalletAddress?.slice(0, 20).concat("...")}</span>
+                    </div>
+
+                    {showDisconnect && <Button
+                      type="button"
+                      onClick={() => disconnect()}
+                      className="absolute -bottom-12 w-full max-w-[353px] bg-[#000000] hover:bg-[#1D205C] h-auto px-10 py-3 rounded-full"
+                    >
+                      Disconnect wallet
+                    </Button>}
+                  </div>
                 </div>
               </SheetContent>
             </Sheet>
@@ -102,6 +121,22 @@ export default function NavBar() {
                   )}
                 </NavLink>
               ))}
+
+              <div className="flex flex-col relative">
+                <div onClick={() => setShowDisconnect(!showDisconnect)}
+                  className="flex w-[220px] cursor-pointer items-center justify-center gap-4 rounded-[16px] bg-[#93b7be52] px-4 py-2 text-[16px] text-[#1E1E1E]">
+                  <span className="text-[16px] text-white">{userWalletAddress?.slice(0, 20).concat("...")}</span>
+                </div>
+
+                {showDisconnect && <Button
+                  type="button"
+                  onClick={() => disconnect()}
+                  className="absolute -bottom-12 w-full max-w-[353px] bg-[#000000] hover:bg-[#1D205C] h-auto px-10 py-3 rounded-full"
+                >
+                  Disconnect wallet
+                </Button>}
+              </div>
+
             </div>
           </div>
         </div>

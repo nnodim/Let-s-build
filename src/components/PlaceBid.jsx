@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {
   Dialog,
   DialogClose,
@@ -12,7 +13,7 @@ import { Button } from "./ui/button";
 import { logo1 } from "@/assets";
 import { Input } from "./ui/input";
 
-export const PlaceBid = () => {
+export const PlaceBid = (props) => {
   //    const navigate = useNavigate();
   return (
     <Dialog>
@@ -32,7 +33,7 @@ export const PlaceBid = () => {
           </div>
 
           <form className="flex flex-col gap-5">
-            <div className="flex flex-col gap-y-2">
+            {/* <div className="flex flex-col gap-y-2">
               <label htmlFor="auctionId" className="text-gray-700">
                 Auction Id
               </label>
@@ -42,7 +43,7 @@ export const PlaceBid = () => {
                 type="number"
                 placeholder="Enter Auction Id"
               />
-            </div>
+            </div> */}
             <div className="flex flex-col gap-y-2">
               <label htmlFor="amount" className="text-gray-700">
                 Bid Amount
@@ -51,12 +52,16 @@ export const PlaceBid = () => {
                 id="amount"
                 name="amount"
                 type="number"
+                value={props.value}
+                onChange={props.onChange}
+                autoComplete="off"
                 placeholder="Enter Bid Amount"
               />
             </div>
             <DialogClose
               type="button"
-              //   onClick={() => navigate(`/auction`)}
+              onClick={props.onClick}
+              disabled={props.disabled}
               className="w-full max-w-[353px] mx-auto text-white bg-[#1D205C] hover:bg-[#1D205C]/70 h-auto px-10 py-5 rounded-full text-base"
             >
               Place Bid

@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+import React, { useState, useEffect } from "react";
 import {
   Dialog,
   DialogClose,
@@ -11,9 +13,54 @@ import {
 import { Button } from "./ui/button";
 import { logo1 } from "@/assets";
 import { Input } from "./ui/input";
+import { BaseError, useWriteContract } from "wagmi";
+import { nebulaXAbi, nebulaXCa } from "@/constants/ABI/nebulaXcontracts";
 
-export const AuctionModal = () => {
+export const AuctionModal = (props) => {
   //    const navigate = useNavigate();
+  const [selectedTokenId, setSelectedTokenId] = useState();
+
+  const [auctionDetails, setAuctionDetails] = useState({
+    minBidAmount: '',
+    durationInMins: ''
+  })
+
+  const handleChange = (event) => {
+    let value = event.target.value;
+    let name = event.target.name;
+
+    setAuctionDetails((prevalue) => {
+      return {
+        ...prevalue,   // Spread Operator               
+        [name]: value
+      }
+    })
+  }
+  const { data: hash, isPending, error, writeContract } = useWriteContract();
+
+  function auction(tokenId) {
+    // alert(`${tokenId}, ${auctionDetails.minBidAmount}, ${auctionDetails.durationInMins}`);
+    setSelectedTokenId(tokenId);
+    writeContract({
+      address: nebulaXCa,
+      abi: nebulaXAbi,
+      functionName: "createAuction",
+      args: [tokenId, auctionDetails.minBidAmount, auctionDetails.durationInMins],
+    });
+  }
+
+  useEffect(() => {
+    if (hash) {
+      alert("Auction Successful");
+    }
+  }, [hash]);
+
+  useEffect(() => {
+    if (error) {
+      alert((BaseError).shortMessage || error.message);
+    }
+  }, [error]);
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -32,7 +79,7 @@ export const AuctionModal = () => {
           </div>
 
           <form className="flex flex-col gap-5">
-            <div className="flex flex-col gap-y-2">
+            {/* <div className="flex flex-col gap-y-2">
               <label htmlFor="tokenId" className="text-gray-700">
                 Token Id
               </label>
@@ -42,25 +89,29 @@ export const AuctionModal = () => {
                 type="number"
                 placeholder="Enter Token Id"
               />
-            </div>
+            </div> */}
             <div className="flex flex-col gap-y-2">
               <label htmlFor="minBid" className="text-gray-700">
                 Minimum Bid
               </label>
               <Input
                 id="minBid"
-                name="minBid"
+                onChange={handleChange}
+                value={auctionDetails.minBidAmount}
+                name="minBidAmount"
                 type="number"
                 placeholder="Enter Minimum Bid"
               />
             </div>
             <div className="flex flex-col gap-y-2">
               <label htmlFor="duration" className="text-gray-700">
-                Duration
+                Duration in minutes
               </label>
               <Input
                 id="duration"
-                name="duration"
+                onChange={handleChange}
+                value={auctionDetails.durationInMins}
+                name="durationInMins"
                 type="number"
                 placeholder="Enter Duration"
               />
@@ -68,7 +119,8 @@ export const AuctionModal = () => {
 
             <DialogClose
               type="button"
-              //   onClick={() => navigate(`/auction`)}
+              disabled={props.tokenId === selectedTokenId && isPending}
+              onClick={() => auction(props.tokenId)}
               className="w-full max-w-[353px] mx-auto text-white bg-[#1D205C] hover:bg-[#1D205C]/70 h-auto px-10 py-5 rounded-full text-base"
             >
               Auction
