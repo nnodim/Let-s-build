@@ -106,8 +106,7 @@ export const Auctions = () => {
   const { data: auctionList } = useReadContract({
     address: nebulaXCa,
     abi: nebulaXAbi,
-    functionName: "auctions",
-    // args: [],
+    functionName: "getAuctionItems"
   });
   console.log("auctionList:", auctionList);
 

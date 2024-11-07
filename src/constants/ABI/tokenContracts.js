@@ -1,4 +1,4 @@
-export const tokenCA = "0xe265b5EA58b98c25a77C55d516b01Ba470f4f929";
+export const tokenCA = "0xe666B344983fd1A6c220786160e0c737F421CDe6";
 export const tokenAbi = [
     {
         "inputs": [],
@@ -331,4 +331,4 @@ export const tokenAbi = [
         "stateMutability": "nonpayable",
         "type": "function"
     }
-]
+];

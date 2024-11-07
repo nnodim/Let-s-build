@@ -30,11 +30,10 @@ export const Dashboard = () => {
   const { data: nftList } = useReadContract({
     address: nebulaXCa,
     abi: nebulaXAbi,
-    functionName: "listings",
-    // args: [1],
+    functionName: "getListedItems"
   });
 
-  // console.log("nftList:", nftList);
+  console.log("nftList:", nftList);
 
   const { data: hash, isPending, error, writeContract } = useWriteContract();
 

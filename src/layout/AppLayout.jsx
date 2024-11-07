@@ -18,6 +18,7 @@ export const AppLayout = () => {
     args: [userWalletAddress],
   });
 
+  // console.log("isAuthorized", isAuthorized)
   
   useEffect(() => {
     if (!isConnected) {
