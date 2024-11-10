@@ -23,29 +23,33 @@ export const Approved = () => {
 
   const { address: userWalletAddress, isConnected } = useAccount();
 
-  const { data: isVerified } = useReadContract({
+  const { data: isAuthorized } = useReadContract({
     address: nebulaXCa,
     abi: nebulaXAbi,
-    functionName: "kycVerified",
+    functionName: "authorizedAddresses",
     args: [userWalletAddress],
   });
 
-  useEffect(() => {
-    if (isVerified) {
-      navigate(`/dashboard`);
-    }
-  }, [isVerified, navigate]);
+  // useEffect(() => {
+  //   if (isAuthorized) {
+  //     navigate(`/dashboard`);
+  //   }
+  // }, [isAuthorized, navigate]);
 
   const { data: hash, isPending, error, writeContract } = useWriteContract();
 
   // const tokenCA = import.meta.VITE_TOKEN_CA;
   function approve() {
-    writeContract({
-      address: tokenCA,
-      abi: tokenAbi,
-      functionName: "approve",
-      args: [userWalletAddress, tokenAmount],
-    });
+    if (isAuthorized) {
+      return navigate(`/dashboard`);
+    } else {     
+      writeContract({
+        address: tokenCA,
+        abi: tokenAbi,
+        functionName: "approve",
+        args: [userWalletAddress, tokenAmount],
+      });
+    }
   }
 
   useEffect(() => {
@@ -56,7 +60,7 @@ export const Approved = () => {
     } else {
       navigate(`/`);
     }
-  }, [isConnected, hash, navigate, tokenAmount]);
+  }, [isConnected, hash, navigate]);
 
   useEffect(() => {
     if (error) {

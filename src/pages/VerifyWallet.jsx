@@ -16,18 +16,18 @@ export const VerifyWallet = () => {
 
   const { data: hash, isPending, error, writeContract } = useWriteContract();
 
-  const { data: isVerified } = useReadContract({
+  const { data: isAuthorized } = useReadContract({
     address: nebulaXCa,
     abi: nebulaXAbi,
-    functionName: "kycVerified",
+    functionName: "authorizedAddresses",
     args: [userWalletAddress],
   });
 
   useEffect(() => {
-    if (isVerified) {
+    if (isAuthorized) {
       navigate(`/dashboard`);
     }
-  }, [isVerified, navigate]);
+  }, [isAuthorized, navigate]);
 
   function verifyWalletAddress() {
     writeContract({

@@ -1,4 +1,4 @@
-export const nebulaXCa = "0xc07355Df6ba9C72B3cEE9C1C5F8e67612da13C91";
+export const nebulaXCa = "0xFA6424E600c0bab13A332F342CEce3ad5c6Bd025";
 export const nebulaXAbi = [
     {
         "inputs": [
@@ -628,7 +628,7 @@ export const nebulaXAbi = [
         "inputs": [
             {
                 "internalType": "uint256",
-                "name": "tokenId",
+                "name": "_tokenId",
                 "type": "uint256"
             }
         ],
@@ -641,17 +641,17 @@ export const nebulaXAbi = [
         "inputs": [
             {
                 "internalType": "uint256",
-                "name": "tokenId",
+                "name": "_tokenId",
                 "type": "uint256"
             },
             {
                 "internalType": "uint256",
-                "name": "minBid",
+                "name": "_minBid",
                 "type": "uint256"
             },
             {
                 "internalType": "uint256",
-                "name": "durationInMinutes",
+                "name": "_durationInMinutes",
                 "type": "uint256"
             }
         ],
@@ -664,12 +664,12 @@ export const nebulaXAbi = [
         "inputs": [
             {
                 "internalType": "uint256",
-                "name": "tokenId",
+                "name": "_tokenId",
                 "type": "uint256"
             },
             {
                 "internalType": "uint256",
-                "name": "price",
+                "name": "_price",
                 "type": "uint256"
             }
         ],
@@ -971,12 +971,12 @@ export const nebulaXAbi = [
         "inputs": [
             {
                 "internalType": "string",
-                "name": "tokenURI",
+                "name": "_tokenURI",
                 "type": "string"
             },
             {
                 "internalType": "uint256",
-                "name": "price",
+                "name": "_price",
                 "type": "uint256"
             }
         ],
@@ -1072,12 +1072,12 @@ export const nebulaXAbi = [
         "inputs": [
             {
                 "internalType": "uint256",
-                "name": "auctionId",
+                "name": "_auctionId",
                 "type": "uint256"
             },
             {
                 "internalType": "uint256",
-                "name": "bidAmount",
+                "name": "_bidAmount",
                 "type": "uint256"
             }
         ],
@@ -1232,19 +1232,6 @@ export const nebulaXAbi = [
         "type": "function"
     },
     {
-        "inputs": [],
-        "name": "totalSupply",
-        "outputs": [
-            {
-                "internalType": "uint256",
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
         "inputs": [
             {
                 "internalType": "address",
@@ -1284,12 +1271,12 @@ export const nebulaXAbi = [
         "inputs": [
             {
                 "internalType": "uint256",
-                "name": "tokenId",
+                "name": "_tokenId",
                 "type": "uint256"
             },
             {
                 "internalType": "uint256",
-                "name": "newPrice",
+                "name": "_newPrice",
                 "type": "uint256"
             }
         ],

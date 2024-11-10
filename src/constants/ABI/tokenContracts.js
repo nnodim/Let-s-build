@@ -1,4 +1,4 @@
-export const tokenCA = "0xe666B344983fd1A6c220786160e0c737F421CDe6";
+export const tokenCA = "0x779827E0493b671615962E646fe28999E89a0eE1";
 export const tokenAbi = [
     {
         "inputs": [],

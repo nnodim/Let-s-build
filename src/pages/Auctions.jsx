@@ -13,86 +13,86 @@ import { Verified } from "lucide-react";
 import { BaseError, useWriteContract, useReadContract } from "wagmi";
 import { nebulaXAbi, nebulaXCa } from "@/constants/ABI/nebulaXcontracts";
 
-const NFTs = [
-  {
-    img: nft1,
-    verified: true,
-    name: "Random Namee",
-    tokenID: 100,
-    auctionID: 1,
-    minBid: 100,
-    maxBid: 200,
-    highestBidder: "John",
-    creator: "0x123456789",
-    endDate: "2022-01-01",
-    isActive: false,
-  },
-  {
-    img: nft2,
-    verified: true,
-    name: "Random Namee",
-    tokenID: 100,
-    auctionID: 1,
-    minBid: 100,
-    maxBid: 200,
-    highestBidder: "John",
-    creator: "0x123456789",
-    endDate: "2022-01-01",
-    isActive: true,
-  },
-  {
-    img: nft3,
-    verified: false,
-    name: "Random Namee",
-    tokenID: 100,
-    auctionID: 1,
-    minBid: 100,
-    maxBid: 200,
-    highestBidder: "John",
-    creator: "0x123456789",
-    endDate: "2022-01-01",
-    isActive: true,
-  },
-  {
-    img: nft1,
-    verified: true,
-    name: "Random Namee",
-    tokenID: 100,
-    auctionID: 1,
-    minBid: 100,
-    maxBid: 200,
-    highestBidder: "John",
-    creator: "0x123456789",
-    endDate: "2022-01-01",
-    isActive: false,
-  },
-  {
-    img: nft2,
-    verified: true,
-    name: "Random Namee",
-    tokenID: 100,
-    auctionID: 1,
-    minBid: 100,
-    maxBid: 200,
-    highestBidder: "John",
-    creator: "0x123456789",
-    endDate: "2022-01-01",
-    isActive: true,
-  },
-  {
-    img: nft3,
-    verified: false,
-    name: "Random Namee",
-    tokenID: 100,
-    auctionID: 1,
-    minBid: 100,
-    maxBid: 200,
-    highestBidder: "John",
-    creator: "0x123456789",
-    endDate: "2022-01-01",
-    isActive: true,
-  },
-];
+// const NFTs = [
+//   {
+//     img: nft1,
+//     verified: true,
+//     name: "Random Namee",
+//     tokenID: 100,
+//     auctionID: 1,
+//     minBid: 100,
+//     maxBid: 200,
+//     highestBidder: "John",
+//     creator: "0x123456789",
+//     endDate: "2022-01-01",
+//     isActive: false,
+//   },
+//   {
+//     img: nft2,
+//     verified: true,
+//     name: "Random Namee",
+//     tokenID: 100,
+//     auctionID: 1,
+//     minBid: 100,
+//     maxBid: 200,
+//     highestBidder: "John",
+//     creator: "0x123456789",
+//     endDate: "2022-01-01",
+//     isActive: true,
+//   },
+//   {
+//     img: nft3,
+//     verified: false,
+//     name: "Random Namee",
+//     tokenID: 100,
+//     auctionID: 1,
+//     minBid: 100,
+//     maxBid: 200,
+//     highestBidder: "John",
+//     creator: "0x123456789",
+//     endDate: "2022-01-01",
+//     isActive: true,
+//   },
+//   {
+//     img: nft1,
+//     verified: true,
+//     name: "Random Namee",
+//     tokenID: 100,
+//     auctionID: 1,
+//     minBid: 100,
+//     maxBid: 200,
+//     highestBidder: "John",
+//     creator: "0x123456789",
+//     endDate: "2022-01-01",
+//     isActive: false,
+//   },
+//   {
+//     img: nft2,
+//     verified: true,
+//     name: "Random Namee",
+//     tokenID: 100,
+//     auctionID: 1,
+//     minBid: 100,
+//     maxBid: 200,
+//     highestBidder: "John",
+//     creator: "0x123456789",
+//     endDate: "2022-01-01",
+//     isActive: true,
+//   },
+//   {
+//     img: nft3,
+//     verified: false,
+//     name: "Random Namee",
+//     tokenID: 100,
+//     auctionID: 1,
+//     minBid: 100,
+//     maxBid: 200,
+//     highestBidder: "John",
+//     creator: "0x123456789",
+//     endDate: "2022-01-01",
+//     isActive: true,
+//   },
+// ];
 export const Auctions = () => {
 
   const [selectedAuctionId, setSelectedAuctionId] = useState();
@@ -108,13 +108,13 @@ export const Auctions = () => {
     abi: nebulaXAbi,
     functionName: "getAuctionItems"
   });
-  console.log("auctionList:", auctionList);
+  // console.log("auctionList:", auctionList);
 
   const { data: hash, isPending, error, writeContract } = useWriteContract();
 
-  function placeBid(auctionId) {
+  function placeBid(auctionId, index) {
     // alert(`${auctionId}, ${bidPrice}`)
-    setSelectedAuctionId(auctionId);
+    setSelectedAuctionId(index);
     writeContract({
       address: nebulaXCa,
       abi: nebulaXAbi,
@@ -179,16 +179,16 @@ export const Auctions = () => {
                     )} */}
                   </div>
                 </TableCell>
-                <TableCell>{nft.tokenId}</TableCell>
-                <TableCell>{nft.auctionId}</TableCell>
-                <TableCell>{nft.minBid}</TableCell>
-                <TableCell>{nft.highestBid}</TableCell>
+                <TableCell>{nft.tokenId.toString()}</TableCell>
+                <TableCell>{nft.auctionId.toString()}</TableCell>
+                <TableCell>{nft.minBid.toString()}</TableCell>
+                <TableCell>{nft.highestBid.toString()}</TableCell>
                 <TableCell>{nft.highestBidder}</TableCell>
                 <TableCell>{nft.creator}</TableCell>
-                <TableCell>{nft.endTime}</TableCell>
+                <TableCell>{nft.endTime.toString()}</TableCell>
                 <TableCell>{nft.isActive ? "Yes" : "No"}</TableCell>
                 <TableCell>
-                  <PlaceBid value={bidPrice} onChange={handleChange} onClick={() => placeBid(nft.auctionId)} disabled={nft.auctionId === selectedAuctionId && isPending} />
+                  <PlaceBid value={bidPrice} onChange={handleChange} onClick={() => placeBid(nft.auctionId, i)} disabled={i === selectedAuctionId && isPending} />
                 </TableCell>
               </TableRow>
             ))}

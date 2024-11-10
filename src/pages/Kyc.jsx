@@ -22,7 +22,7 @@ export const Kyc = () => {
 
   useEffect(() => {
     if (isVerified) {
-      navigate(`/dashboard`);
+      navigate(`/verify-wallet`);
     }
   }, [isVerified, navigate]);
 

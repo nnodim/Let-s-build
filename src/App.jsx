@@ -2,10 +2,10 @@ import React, { useEffect } from "react";
 import { logo1 } from "./assets";
 import { useNavigate } from "react-router-dom";
 // import { ConnectWalletModal } from "./components/ConnectWalletModal";
-import { useConnect, useAccount, useReadContract } from 'wagmi';
+import { useConnect, useAccount} from 'wagmi';
 import { injected } from 'wagmi/connectors'
 import { Button } from "./components/ui/button";
-import { nebulaXAbi, nebulaXCa } from "./constants/ABI/nebulaXcontracts";
+// import { nebulaXAbi, nebulaXCa } from "./constants/ABI/nebulaXcontracts";
 
 
 function App() {
@@ -14,25 +14,31 @@ function App() {
   const { connect } = useConnect();
   const { address: userWalletAddress, } = useAccount();
 
-  const { data: isValid } = useReadContract({
-    address: nebulaXCa,
-    abi: nebulaXAbi,
-    functionName: "verify",
-    args: [userWalletAddress, 1],
-  });
+  // const { data: isAuthorized } = useReadContract({
+  //   address: nebulaXCa,
+  //   abi: nebulaXAbi,
+  //   functionName: "authorizedAddresses",
+  //   args: [userWalletAddress],
+  // });
 
   
-  // console.log("isVerified:", isValid);
+  // console.log("isAuthorized:", isAuthorized);
+
+  // useEffect(() => {
+  //   if (userWalletAddress) {
+  //     if (isAuthorized) {
+  //       return navigate(`/dashboard`);
+  //     } else {
+  //       return navigate(`/approved`);
+  //     }
+  //   }
+  // }, [userWalletAddress, isAuthorized, navigate]);
 
   useEffect(() => {
     if (userWalletAddress) {
-      if (isValid) {
-        return navigate(`/dashboard`);
-      } else {
         return navigate(`/approved`);
-      }
     }
-  }, [userWalletAddress, isValid, navigate]);
+  }, [userWalletAddress, navigate]);
 
   // useEffect(() => {
   //   if (userWalletAddress) {
@@ -67,11 +73,6 @@ function App() {
               Connect Wallet
             </Button>
 
-            {/* {connectors.map((connector) => (
-              <Button key={connector.uid} onClick={() => connect({ connector })} className="bg-[#161E53] h-auto rounded-[15px] text-5xl font-bold px-10 py-4">
-              {connector.name}
-            </Button>
-            ))} */}
           </div>
         </div>
       </main>
