@@ -65,6 +65,7 @@ With our MVP now live, we’re looking ahead to these next steps:
 [Presentation slide](https://www.canva.com/design/DAGUycKhuFE/lffz3PHu0ebOj1b_f7DGlw/edit?utm_content=DAGUycKhuFE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
 ## Working Demo
+[Demo](https://youtu.be/-_aN9XKy8fI?feature=shared)
 
 ## Thank you for exploring NebulaX! 😃
 
